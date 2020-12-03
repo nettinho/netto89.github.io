@@ -26,19 +26,31 @@
     <h1>Javascript Clash of Code helper functions</h1>
 
     <h2>Prime<button onclick="copy('prime')">COPY</button></h2>
-    <pre><code id='prime'>const isPrime = (x) => {for (i = 2; i < x; i++) if (x % i == 0) return false; return x > 1}</code></pre>
+    <pre><code id='prime'>prime = (x) => {for (i = 2; i < x; i++) if (x % i == 0) return false; return x > 1}</code></pre>
 
     <h2>Greatest common divison<button onclick="copy('gcd')">COPY</button></h2>
-    <pre><code id='gcd'>const gcd = (a, b) => (!b ? a : gcd(b, a % b))</code></pre>
+    <pre><code id='gcd'>gcd = (a, b) => (!b ? a : gcd(b, a % b))</code></pre>
 
     <h2>Factorial<button onclick="copy('fact')">COPY</button></h2>
-    <pre><code id='fact'>const fact = (x) => (x > 1 ? x * fact(x - 1) : 1)</code></pre>
+    <pre><code id='fact'>fact = (x) => (x > 1 ? x * fact(x - 1) : 1)</code></pre>
+
+    <h2>Count ocurrence of characters<button onclick="copy('count')">COPY</button></h2>
+    <pre><code id='count'>count = arr => arr.reduce((a,c)=>a[c]=(a[c]||0)+1,{})</code></pre>
+
+    <h2>Reduce sum array<button onclick="copy('sum')">COPY</button></h2>
+    <pre><code id='sum'>sum = arr => arr.reduce((a,x)=>a+=+x,0)</code></pre>
+
+    <h2>Prime factors of a number<button onclick="copy('primeFactors')">COPY</button></h2>
+    <pre><code id='primeFactors'>const primeFactors = n => {f=[];d=2; while(n>=2)if(n%d)d++;else{f.push(d); n/=d}return f}</code></pre>
 
     <script>
       function copy(id) {
-        console.log('ELEMENT ID', id)
-        var text = document.getElementById(id).innerHTML;
-
+        var text = document.getElementById(id).innerHTML
+          .replace(/&amp;/g, '&')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&quot;/g, '"');
+        console.log(text)
         const el = document.createElement('textarea');
         el.value = text;
         el.setAttribute('readonly', '');
