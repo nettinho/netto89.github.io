@@ -12,7 +12,7 @@
         font: 16px/24px 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
       }
       button {
-        margin-left: 10px;
+        margin-right: 10px;
         background: #fbfbfb;
         color: black;
         font-size: 20px;
@@ -25,22 +25,23 @@
   <body>
     <h1>Javascript Clash of Code helper functions</h1>
 
-    <h2>Prime<button onclick="copy('prime')">COPY</button></h2>
+    <hr/>
+    <h2><button onclick="copy('prime')">COPY</button>Prime</h2>
     <pre><code id='prime'>prime = (x) => {for (i = 2; i < x; i++) if (x % i == 0) return false; return x > 1}</code></pre>
-
-    <h2>Greatest common divison<button onclick="copy('gcd')">COPY</button></h2>
+    <hr/>
+    <h2><button onclick="copy('gcd')">COPY</button>Greatest common divison</h2>
     <pre><code id='gcd'>gcd = (a, b) => (!b ? a : gcd(b, a % b))</code></pre>
-
-    <h2>Factorial<button onclick="copy('fact')">COPY</button></h2>
+    <hr/>
+    <h2><button onclick="copy('fact')">COPY</button>Factorial</h2>
     <pre><code id='fact'>fact = (x) => (x > 1 ? x * fact(x - 1) : 1)</code></pre>
-
-    <h2>Count ocurrence of characters<button onclick="copy('count')">COPY</button></h2>
+    <hr/>
+    <h2><button onclick="copy('count')">COPY</button>Count ocurrence of characters</h2>
     <pre><code id='count'>count = arr => arr.reduce((a,c)=>a[c]=(a[c]||0)+1,{})</code></pre>
-
-    <h2>Reduce sum array<button onclick="copy('sum')">COPY</button></h2>
+    <hr/>
+    <h2><button onclick="copy('sum')">COPY</button>Reduce sum array</h2>
     <pre><code id='sum'>sum = arr => arr.reduce((a,x)=>a+=+x,0)</code></pre>
-
-    <h2>Prime factors of a number<button onclick="copy('primeFactors')">COPY</button></h2>
+    <hr/>
+    <h2><button onclick="copy('primeFactors')">COPY</button>Prime factors of a number</h2>
     <pre><code id='primeFactors'>const primeFactors = n => {f=[];d=2; while(n>=2)if(n%d)d++;else{f.push(d); n/=d}return f}</code></pre>
 
     <script>
